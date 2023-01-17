@@ -2,6 +2,7 @@ import express from "express";
 require('express-async-errors');  //to throw errors in async req also
 import { json } from "body-parser"; 3
 import mongoose from 'mongoose';
+import cookieSession from 'cookie-session';
 
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
@@ -11,7 +12,14 @@ import { errorHandler } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
+app.set('trust proxy', true);  //https 
 app.use(json());
+app.use(
+  cookieSession({
+    signed: false,         //no need for encryption because of jwt already encrypted
+    secure: true           //
+  })
+);  // to use cookie for sending jwt inside it
 
 app.use(currentUserRouter);
 app.use(signinRouter);
