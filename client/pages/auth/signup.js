@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+import Router from 'next/router';
 import useRequest from '../../hooks/use-request';
 
 export default () => {
@@ -11,12 +11,13 @@ export default () => {
     body: {
       email,
       password
-    }
-  });
+    },
+    onSuccess: () => Router.push('/')
+  });                                         ///custom hook -url method body call back after success(rediercting to next page)
 
   const onSubmit = async event => {
     event.preventDefault();
-    doRequest();
+    await doRequest();
   };
 
   return (
