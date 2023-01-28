@@ -16,3 +16,8 @@ export default ({ req }) => {
     });
   }
 };
+
+
+//for handling client to access the other services, while server side rendering we need to 
+// contact other service via ingress-nginx--so here we setting up two type of api call base url 
+// one for browser side call and other for server side call

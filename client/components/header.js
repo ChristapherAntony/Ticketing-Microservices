@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export default ({ currentUser }) => {
+
+  //////////////////////
   const links = [
     !currentUser && { label: 'Sign Up', href: '/auth/signup' },
     !currentUser && { label: 'Sign In', href: '/auth/signin' },
@@ -14,7 +16,11 @@ export default ({ currentUser }) => {
         </li>
       );
     });
+    // here is the code for conditional link rendering related to used signed in or not
+    /////////////////
 
+
+    
   return (
     <nav className="navbar navbar-light bg-light">
       <Link href="/" className="navbar-brand">GitTix</Link>

@@ -1,3 +1,7 @@
+// global component 
+// used for bootstrap 
+// get initial data(getInitialProps)  
+
 import 'bootstrap/dist/css/bootstrap.css';
 import buildClient from '../api/build-client';
 import Header from '../components/header';
