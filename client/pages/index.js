@@ -1,12 +1,20 @@
-const LandingPage = ({ color }) => {
-  console.log('I am in the component', color);
+import buildClient from '../api/build-client';
+
+const LandingPage = ({ currentUser }) => {              //only on browser
+
+
+  // console.log(currentUser);
+  // axios.get('/api/users/currentuser');
+  console.log(currentUser);
+
   return <h1>Landing Page</h1>;
 };
 
-LandingPage.getInitialProps = () => {
-  console.log('I am on the server!');
+LandingPage.getInitialProps = async context => {           // server side
+  const client = buildClient(context);
+  const { data } = await client.get('/api/users/currentuser');
 
-  return { color: 'red' };
+  return data;
 };
 
 export default LandingPage;

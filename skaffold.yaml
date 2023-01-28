@@ -15,7 +15,7 @@ build:
       sync:
         manual:
           - src: "src/**/*.ts"
-            dest: .
+            dest: . 
     - image: christapherantony/ticketing-client
       context: client
       docker:
