@@ -1,4 +1,5 @@
-import { currentUser } from './../middlewares/current-user';
+import { currentUser } from '@getmytickets/common';
+// import { currentUser } from '@sgtickets/common';
 import express from 'express';
 const router = express.Router();
 
