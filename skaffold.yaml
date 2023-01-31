@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:   
-    - image: christapherantony/auth
+    - image: christapherantony/auth 
       context: auth
       docker:
         dockerfile: Dockerfile
@@ -32,4 +32,4 @@ build:
         manual:
           - src: "src/**/*.ts"
             dest: . 
-   
+     

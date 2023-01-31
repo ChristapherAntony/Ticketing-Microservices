@@ -1,5 +1,0 @@
-{
-    "yaml.schemas": {
-        "kubernetes://schema/v1%40service": "file:///c%3A/Users/Christapher/Brocamp/Micro%20Services/ticketing/infra/k8s/client-depl.yaml"
-    }
-}

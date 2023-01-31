@@ -17,8 +17,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@cygnetops/common": "^1.0.30",
     "@get-tickets/common": "^1.0.7",
-    "@getmytickets/common": "^1.0.6",
+    "@getmytickets/common": "^1.0.10",
     "@sgtickets/common": "^1.0.24",
     "@types/cookie-session": "^2.0.44",
     "@types/express": "^4.17.15",
