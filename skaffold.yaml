@@ -7,7 +7,7 @@ deploy:
 build:
   local:
     push: false
-  artifacts:   
+  artifacts:    
     - image: christapherantony/auth 
       context: auth
       docker:
