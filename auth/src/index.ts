@@ -11,6 +11,7 @@ const start = async () => {
   }                  //ts error override 
 
   try {
+    mongoose.set('strictQuery', true)
     await mongoose.connect(process.env.MONGO_URI);   // mogo url from env
     console.log('Connected to MongoDb');
   } catch (err) {
