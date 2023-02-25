@@ -11,6 +11,12 @@ router.post('/api/tickets', requireAuth,
   [body('title').not().isEmpty().withMessage('Title is required'),
   body('price').isFloat({ gt: 0 }).withMessage('Price must be greater than 0'),
   ], validateRequest, async (req: Request, res: Response) => {
+    console.log("api call ");
+    console.log(req.cookies);
+    console.log(req.session);
+    
+    
+    
     const { title, price } = req.body;
     //ticket doc
     const ticket = Ticket.build({

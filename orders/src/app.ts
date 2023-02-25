@@ -3,13 +3,13 @@ require('express-async-errors');  //to throw errors in async req also
 import { json } from "body-parser"; 3
 
 import cookieSession from 'cookie-session';
+import { errorHandler,NotFoundError,currentUser } from "@getmytickets/common";
 
-import { currentUserRouter } from "./routes/current-user";
-import { signinRouter } from "./routes/signin";
-import { signoutRouter } from "./routes/signout";
-import { signupRouter } from "./routes/signup";
-import { errorHandler,NotFoundError } from "@getmytickets/common";
-// import { errorHandler,NotFoundError } from "@cygnetops/common";
+import { deleteOrderRouter } from './routes/delete';
+import { indexOrderRouter } from './routes/index';
+import { newOrderRouter } from './routes/new';
+import { showOrderRouter } from './routes/show';
+ 
 
 const app = express();
 app.set('trust proxy', true);  //https 
@@ -22,11 +22,17 @@ app.use(
   })
 );  // to use cookie for sending jwt inside it
 
-app.use(currentUserRouter);
-app.use(signinRouter);
-app.use(signoutRouter);
-app.use(signupRouter);
 
+app.get('/api/tickets/hello',(req,res)=>{
+  console.log("api call@@@@@@@@@@@@@@@@");
+  res.json(200)
+})
+
+app.use(currentUser)  //after cookieSession code  middle ware from npm
+app.use(deleteOrderRouter);
+app.use(indexOrderRouter);
+app.use(newOrderRouter);
+app.use(showOrderRouter);
 app.all('*', async () => {             //used app.all insted of get or post to available for all req
   throw new NotFoundError()   //invalid api calling-write before errorHandler middleware
 })
@@ -35,5 +41,3 @@ app.use(errorHandler); //error handiling middle ware every thrown error goes to 
 
 
 export {app}
-
-

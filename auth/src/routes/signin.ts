@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 
 import { Password } from '../services/password';
 import { User } from '../models/user';
-import { BadRequestError,validateRequest } from '@getmytickets/common';
+import { BadRequestError, validateRequest } from '@getmytickets/common';
 
 import { type } from "os";
 
@@ -21,7 +21,7 @@ router.post(
       .withMessage("You must supply a password"),
   ],
   validateRequest,
-  async(req: Request, res: Response) => {
+  async (req: Request, res: Response) => {
     const { email, password } = req.body;
 
     const existingUser = await User.findOne({ email });
@@ -47,7 +47,7 @@ router.post(
     );
 
     // Store it on session object
-    
+
 
     req.session = {
       jwt: userJwt,
@@ -59,3 +59,4 @@ router.post(
 );
 
 export { router as signinRouter }; 
+
