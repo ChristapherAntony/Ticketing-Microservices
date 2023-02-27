@@ -1,4 +1,4 @@
-import { Publisher, Subjects, TicketCreatedEvent } from '@getmytickets/common';
+import { Publisher, Subjects, TicketCreatedEvent } from '@cygnetops/common';
 
 //Publisher--base class   , Subjects--enum, 
 

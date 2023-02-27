@@ -2,6 +2,9 @@ import mongoose from 'mongoose';
 import { app } from './app';
 import { natsWrapper } from './nats-wrapper';
 
+import { OrderCreatedListener } from './events/listeners/order-created-listener';
+import { OrderCancelledListener } from './events/listeners/order-cancelled-listener';
+
 
 const start = async () => {
   //...........................env check.............................//
@@ -21,7 +24,7 @@ const start = async () => {
     throw new Error('NATS_URL must be defined');
   }
 
-//................................................................//
+  //................................................................//
   try {
     //connect  
     await natsWrapper.connect(
@@ -37,13 +40,16 @@ const start = async () => {
     process.on('SIGINT', () => natsWrapper.client.close());
     process.on('SIGTERM', () => natsWrapper.client.close());
 
+    new OrderCreatedListener(natsWrapper.client).listen();
+    new OrderCancelledListener(natsWrapper.client).listen();
+
 
     mongoose.set('strictQuery', true)
     await mongoose.connect(process.env.MONGO_URI);   // mogo url from env
     console.log('Connected to MongoDb');
   } catch (err) {
     console.error(err);
-  } 
+  }
 
   // try {
   //   await mongoose.connect('mongodb://auth-mongo-srv:27017/auth', {
@@ -56,6 +62,6 @@ const start = async () => {
   //   console.error(err);
   // }
 
-  app.listen(3000, () => {console.log('Listening on port 3000!!!!!!!!');});
+  app.listen(3000, () => { console.log('Listening on port 3000!!!!!!!!'); });
 };
 start();

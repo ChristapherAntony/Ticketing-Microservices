@@ -23,11 +23,6 @@ app.use(
 );  // to use cookie for sending jwt inside it
 
 
-app.get('/api/tickets/hello',(req,res)=>{
-  console.log("api call@@@@@@@@@@@@@@@@");
-  res.json(200)
-})
-
 app.use(currentUser)  //after cookieSession code  middle ware from npm
 app.use(deleteOrderRouter);
 app.use(indexOrderRouter);

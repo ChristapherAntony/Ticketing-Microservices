@@ -28,26 +28,30 @@ router.post('/api/tickets', requireAuth,
 
     // publish event
     ///**************************************************************************************************************** */
-    // await new TicketCreatedPublisher(natsWrapper.client).publish({
+    new TicketCreatedPublisher(natsWrapper.client).publish({
+      id: ticket.id,
+      title: ticket.title,
+      price: ticket.price,
+      userId: ticket.userId,
+      version: ticket.version,
+    });
+
+
+
+    // --to fix old eroror
+    // interface TicketCreatedEvent {
+    //   id: string;
+    //   title: string;
+    //   price: number;
+    //   userId: string;
+    // }
+    // const ticketCreatedEvent: TicketCreatedEvent = {
     //   id: ticket.id,
     //   title: ticket.title,
     //   price: ticket.price,
     //   userId: ticket.userId
-    // });
-
-    interface TicketCreatedEvent {
-      id: string;
-      title: string;
-      price: number;
-      userId: string;
-    }
-    const ticketCreatedEvent: TicketCreatedEvent = {
-      id: ticket.id,
-      title: ticket.title,
-      price: ticket.price,
-      userId: ticket.userId
-    };
-    await new TicketCreatedPublisher(natsWrapper.client).publish(ticketCreatedEvent);
+    // };
+    // await new TicketCreatedPublisher(natsWrapper.client).publish(ticketCreatedEvent);
     ///**************************************************************************************************************** */
 
 
