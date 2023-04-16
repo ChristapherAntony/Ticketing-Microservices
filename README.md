@@ -9,19 +9,19 @@ This project is a StubHub clone application and based on Stephen Grider [Microse
 
 ### Architecture
 
-<img src="pictures/architecture.jpeg?raw=true" width="900">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681649949/ticketing/architecture_phbq48.jpg" width="900">
 
 ### Overall Function
 
-<img src="pictures/Overall_Function.png?raw=true" width="900">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650055/ticketing/Overall_Function_svemml.png" width="900">
 
 ### App Connection
 
-<img src="pictures/App_Connection.png?raw=true" width="900">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650246/ticketing/App_Connection_cm3n8p.png" width="900">
 
 ### NATS Services 
 
-<img src="pictures/NATS_Services.png?raw=true" width="900">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650284/ticketing/NATS_Services_getqnt.png" width="900">
 
 ### Application Features and Microservices List:
 
@@ -106,11 +106,11 @@ Open your browser and type http://ticketing.dev.
 
 Snapshot of Application:
 
-<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681649949/ticketing/architecture_phbq48.jpg" width="600">
-<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650055/ticketing/Overall_Function_svemml.png" width="600">
-<img src="pictures/ticketing-tickets.png?raw=true" width="600">
-<img src="pictures/ticketing-purches.png?raw=true" width="800">
-<img src="pictures/ticketing-orders.png?raw=true" width="600">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650356/ticketing/ticketing-sign-up_uxwpsr.png" width="600">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650361/ticketing/ticketing-create-a-ticket_wtt2it.png" width="600">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650362/ticketing/ticketing-tickets_yneqc4.png" width="600">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650370/ticketing/ticketing-purches_ozlg69.png" width="800">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650373/ticketing/ticketing-orders_pmbzm5.png" width="600">
 
 ### Run Locally: minikube
 ```
