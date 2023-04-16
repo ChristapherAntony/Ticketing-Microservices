@@ -106,8 +106,8 @@ Open your browser and type http://ticketing.dev.
 
 Snapshot of Application:
 
-<img src="pictures/ticketing-sign-up.png?raw=true" width="600">
-<img src="pictures/ticketing-create-a-ticket.png?raw=true" width="600">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681649949/ticketing/architecture_phbq48.jpg" width="600">
+<img src="https://res.cloudinary.com/dprxebwil/image/upload/v1681650055/ticketing/Overall_Function_svemml.png" width="600">
 <img src="pictures/ticketing-tickets.png?raw=true" width="600">
 <img src="pictures/ticketing-purches.png?raw=true" width="800">
 <img src="pictures/ticketing-orders.png?raw=true" width="600">
