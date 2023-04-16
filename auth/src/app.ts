@@ -1,6 +1,6 @@
 import express from "express";
 require('express-async-errors');  //to throw errors in async req also
-import { json } from "body-parser"; 3
+import { json } from "body-parser"; 
 
 import cookieSession from 'cookie-session';
 

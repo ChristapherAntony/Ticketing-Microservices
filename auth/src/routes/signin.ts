@@ -37,6 +37,8 @@ router.post(
       throw new BadRequestError('Invalid Credentials');
     }
 
+    
+
     // Generate JWT
     const userJwt = jwt.sign(
       {
